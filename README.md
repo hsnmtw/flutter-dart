@@ -33,7 +33,7 @@ Routes
 
 2. to make navigation to any defined route, this example makes
     navigator go to defined route '/1' 
-    ```
+    ```dart
         Navigator.pushNamed(context, "/1");
     ```
 
