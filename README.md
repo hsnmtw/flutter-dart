@@ -1,7 +1,7 @@
 # flutter-dart
 
-VSCode settings.json
-====================
+`.vscode/settings.json`
+=======================
 ```json
 {
     "[dart]": {
