@@ -1,5 +1,12 @@
 # flutter-dart
 
+git to Ignore file mode changes
+===============================
+```bash
+git config core.fileMode false
+git config --global core.fileMode false
+```
+
 `.vscode/settings.json`
 =======================
 1. Disable auto-format because I am not keen with default dart style
