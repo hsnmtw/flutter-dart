@@ -53,18 +53,22 @@ HTTP GET
 ========
 ```dart
 Future<String?> httpGet(String url) async {
-  HttpClient httpClient = HttpClient();
   String? result;
-  Uri uri = Uri.parse(url);
-  HttpClientRequest request = await httpClient.getUrl(uri);
-  request.persistentConnection = false;
-  HttpClientResponse response = await request.close();
-  if (response.statusCode == HttpStatus.ok) {
-    result = await response.transform(utf8.decoder).join();    
-  } else {
-    result = 'Request failed with status: ${response.statusCode}';
+  try{
+    HttpClient httpClient = HttpClient();
+    Uri uri = Uri.parse(url);
+    HttpClientRequest request = await httpClient.getUrl(uri);
+    request.persistentConnection = false;
+    HttpClientResponse response = await request.close();
+    if (response.statusCode == HttpStatus.ok) {
+      result = await response.transform(utf8.decoder).join();    
+    } else {
+      result = 'FAILED: Request failed with status: ${response.statusCode}';
+    }
+    httpClient.close();
+  }catch(e){
+    result = 'ERROR: ${e.toString()}';
   }
-  httpClient.close();
   return result;
 }
 ```
