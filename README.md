@@ -59,8 +59,8 @@ Routes
 HTTP GET
 ========
 ```dart
-Future<String?> httpGet(String url) async {
-  String? result;
+Future<String> httpGet(String url) async {
+  String result;
   try{
     HttpClient httpClient = HttpClient();
     Uri uri = Uri.parse(url);
