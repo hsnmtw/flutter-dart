@@ -47,3 +47,24 @@ Routes
       "/" :    (_) => HomePage(),     // redundant if home property is already set
   }
 ```
+
+
+HTTP GET
+========
+```dart
+Future<String?> httpGet(String url) async {
+  HttpClient httpClient = HttpClient();
+  String? result;
+  Uri uri = Uri.parse(url);
+  HttpClientRequest request = await httpClient.getUrl(uri);
+  request.persistentConnection = false;
+  HttpClientResponse response = await request.close();
+  if (response.statusCode == HttpStatus.ok) {
+    result = await response.transform(utf8.decoder).join();    
+  } else {
+    result = 'Request failed with status: ${response.statusCode}';
+  }
+  httpClient.close();
+  return result;
+}
+```
