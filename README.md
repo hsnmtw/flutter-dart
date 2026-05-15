@@ -25,7 +25,6 @@ Routes
     ...
       home: HomePage(),
       routes: {
-//      "/" :    (_) => HomePage(),     // redundant if home property is already set
         "/1":    (_) => FirstPage(),
         "/2":    (_) => SecondPage(),
       },
@@ -42,3 +41,9 @@ Routes
    which is similar to `window.history.back()` in javascript
 
 4. if `home` property is set, you don't have to define a route named `"/"`
+```dart
+  home: HomePage(),
+  routes: {
+      "/" :    (_) => HomePage(),     // redundant if home property is already set
+  }
+```
