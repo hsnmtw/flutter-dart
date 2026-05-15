@@ -1,5 +1,20 @@
 # flutter-dart
 
+VSCode settings.json
+====================
+```json
+{
+    "[dart]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.rulers": [],
+        "editor.inlineSuggest.enabled": false,
+        "editor.parameterHints.enabled": false,
+    },
+    "dart.closingLabels": false
+}
+```
+
 Routes
 ======
 1. In `main.dart`, when you create `MaterialApp`, configure
